@@ -1,0 +1,22 @@
+{
+  "name": "AdsGPT",
+  "manifest_version": 3,
+  "version": "0.0.3",
+  "description": "A powerful extension designed to revolutionize your Google Ads campaigns by leveraging the capabilities of Taboola's Discovery Platform and OpenAI's language understanding.",
+  "permissions": [
+    "clipboardRead",
+    "cookies",
+    "webRequest",
+    "storage",
+    "tabs"
+  ],
+  "background": { "service_worker": "background.js" },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "js": ["content.js", "data.js", "scriptIndexedDB.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": { "default_popup": "popup.html" }
+}
